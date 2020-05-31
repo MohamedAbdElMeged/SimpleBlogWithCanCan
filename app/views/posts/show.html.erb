@@ -1,0 +1,29 @@
+<br>
+<br>
+<br>
+
+
+<div class="card">
+    <h5 class="card-header">
+        <%= @post.title%>
+    </h5>
+
+    <div class="card-body">
+
+        <p class="card-text">
+            <%= @post.body%>
+
+        </p>
+      <% if can? :update, @post%>  <%= link_to  "Edit", edit_post_path(@post),:class=>'btn btn-primary' %><%end%>
+        <% if can? :destroy, @post%>    <%= link_to  "Delete", post_path,
+                    method: :Delete,
+                    data: {confirm: 'Are you sure ?'},
+                    :class=>'btn btn-danger' %><%end%>
+
+    </div>
+    <hr>
+    <%= render  "comments/comments" %>
+        <br>
+        <br>
+
+        <%= render  "comments/form" %>

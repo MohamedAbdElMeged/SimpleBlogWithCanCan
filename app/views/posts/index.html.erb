@@ -1,0 +1,25 @@
+<br>
+<br>
+<h2>
+    Blog Posts</h2>
+
+
+<% @posts.each do |post| %>
+    <div class="card">
+        <h5 class="card-header">
+            <%= post.title  %>
+        </h5>
+        <div class="card-body">
+
+            <p class="card-text">
+                <%= post.body  %>
+            </p>
+            <%= link_to  "Read More", post_path(post),:class=>'btn btn-primary' %>
+                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <%end%>
